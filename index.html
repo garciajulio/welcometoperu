@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Effect - Welcome to Perú </title>
+	<style>
+
+		:root{
+
+			--rotate-right: rotateZ(7deg);
+			--rotate-left: rotateZ(-7deg);
+			--height-card: 350px;
+		}
+
+		body{
+			
+			padding: 0;
+			background: #1c3643;
+			overflow: hidden;
+		}
+
+		.Main{
+
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			flex-direction: column;
+		}
+
+		.Card{
+
+			width: 370px;
+			height: var(--height-card);
+			padding: 30px;
+			background: #fff;
+			box-shadow: 0 3px 6px 0 #00000030;
+			margin-bottom: 30px;
+			transition: all ease .7s;
+			margin: auto;
+			position: relative;
+			margin-bottom: -500px;
+			overflow: hidden;
+		}
+
+		.Card img{
+
+			width: 100%;
+			height: var(--height-card);
+			object-fit: cover;
+			object-position: center;
+			border: solid 1px #cccccc50;
+
+		}
+
+		.Card div{
+
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			padding-top: 15px;
+		}
+
+		.Card div > img{
+
+			width: 35px;
+			height: 35px;
+		}
+
+		h3{
+			font-size: 2.1em;
+			text-align: center;
+			font-weight: normal;
+			font-family: system-ui;
+			margin: 0;
+		}
+
+
+		.Card:hover ~ .Card:nth-child(2){
+			animation: animateLeft 3.5s;
+		}
+
+		.Card:hover ~ .Card:nth-child(3){
+			animation: animateRight 3.5s;
+		}
+
+		.Card:first-child{
+			z-index: 1;
+		}
+
+		.Card:hover{
+			animation: animateCenter 3.5s;
+		}
+
+
+		@keyframes animateLeft {
+			
+			0%{left: 0;}
+
+			50%{
+
+				transform: var(--rotate-left);
+				left: -250px;
+			}
+
+			100%{
+
+				transform: rotateZ(0);
+				left: 0;
+			}
+		}
+
+		@keyframes animateCenter {
+			
+			0%{
+				width: 370px;
+				height: 350px;
+			}
+
+			50%{
+
+				width: 420px;
+				height: 400px;
+			}
+
+			100%{
+				width: 370px;
+				height: 350px;
+			}
+
+		}
+
+
+		@keyframes animateRight {
+			
+			0%{left: 0;}
+
+			50%{
+
+				transform: var(--rotate-right);
+				left: 250px;
+			}
+
+			100%{
+				left: 0;
+				transform: rotateZ(0);
+			}
+		}
+
+
+	</style>
+</head>
+<body>
+	<div class="Main">
+		<div class="Card">
+			<img src="https://images.pexels.com/photos/259967/pexels-photo-259967.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260" alt="">
+			<div>
+				<img src="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/120/google/274/flag-peru_1f1f5-1f1ea.png" alt="">
+				<h3>Welcome to Perú</h3>
+				<img src="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/120/google/274/flag-peru_1f1f5-1f1ea.png" alt="">
+			</div>
+			
+		</div>
+		<div class="Card">
+			<img src="https://images.unsplash.com/photo-1592322053945-88b9b538becc?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=667&q=80" alt="">
+		</div>
+		<div class="Card">
+			<img src="https://images.pexels.com/photos/3848421/pexels-photo-3848421.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" alt="">
+		</div>
+	</div>
+</body>
+</html>
